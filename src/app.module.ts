@@ -12,13 +12,16 @@ import { TodoModule } from './todo/todo.module';
     TodoModule,
     TypeOrmModule.forRoot(
       {
+        url: process.env.DATABASE_URL,
         type: 'postgres',
-        host: 'postgres',
-        port: 5432,
-        username: process.env.POSTGRES_USER,
-        password: process.env.POSTGRES_PASSWORD,
-        database: process.env.POSTGRES_DB,
+        ssl: {
+          rejectUnauthorized: false,
+        },
+        // username: process.env.POSTGRES_USER,
+        // password: process.env.POSTGRES_PASSWORD,
+        // database: process.env.POSTGRES_DB,
         entities: [Todo],
+        autoLoadEntities: true,
         synchronize: true,
       }
     )
