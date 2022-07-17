@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Todo } from './todo/entities/todo.entity';
 import { TodoModule } from './todo/todo.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -24,7 +25,8 @@ import { TodoModule } from './todo/todo.module';
         autoLoadEntities: true,
         synchronize: true,
       }
-    )
+    ),
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
