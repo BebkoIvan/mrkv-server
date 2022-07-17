@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Todo } from './todo/entities/todo.entity';
 import { TodoModule } from './todo/todo.module';
+import { User } from './user/entities/user.entity';
 import { UserModule } from './user/user.module';
 
 @Module({
@@ -21,7 +22,7 @@ import { UserModule } from './user/user.module';
         // username: process.env.POSTGRES_USER,
         // password: process.env.POSTGRES_PASSWORD,
         // database: process.env.POSTGRES_DB,
-        entities: [Todo],
+        entities: [Todo, User],
         autoLoadEntities: true,
         synchronize: true,
       }
