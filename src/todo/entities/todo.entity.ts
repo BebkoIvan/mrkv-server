@@ -6,11 +6,8 @@ export class Todo {
     id: number;
 
     @Column()
-    description: string;
-
-    @Column()
-    title: string;
+    text: string;
 
     @Column({ default: false })
-    done: boolean;
+    completed: boolean;
 }
