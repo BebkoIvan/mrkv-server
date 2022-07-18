@@ -5,8 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Todo } from './todo/entities/todo.entity';
 import { TodoModule } from './todo/todo.module';
-import { User } from './user/entities/user.entity';
-import { UserModule } from './user/user.module';
+import { Contact } from './contacts/entities/contact.entity';
+import { ContactModule } from './contacts/contact.module';
 
 @Module({
   imports: [
@@ -16,18 +16,19 @@ import { UserModule } from './user/user.module';
       {
         url: process.env.DATABASE_URL,
         type: 'postgres',
+        // host: 'postgres',
         ssl: {
           rejectUnauthorized: false,
         },
         // username: process.env.POSTGRES_USER,
         // password: process.env.POSTGRES_PASSWORD,
         // database: process.env.POSTGRES_DB,
-        entities: [Todo, User],
+        entities: [Todo, Contact],
         autoLoadEntities: true,
         synchronize: true,
       }
     ),
-    UserModule
+    ContactModule
   ],
   controllers: [AppController],
   providers: [AppService],
