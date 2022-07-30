@@ -9,6 +9,8 @@ import { Contact } from './contacts/entities/contact.entity';
 import { ContactModule } from './contacts/contact.module';
 import { NewsModule } from './news/news.module';
 import { News } from './news/entities/news.entity';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -31,7 +33,9 @@ import { News } from './news/entities/news.entity';
       }
     ),
     ContactModule,
-    NewsModule
+    NewsModule,
+    AuthModule,
+    UsersModule
   ],
   controllers: [AppController],
   providers: [AppService],
